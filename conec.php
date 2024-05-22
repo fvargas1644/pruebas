@@ -25,7 +25,7 @@ try {
     // Recuperar los resultados
     $results = $stmt->fetchAll();
     
-    echo $results
+    echo $results;
 } catch (PDOException $e) {
     echo "Error de conexión: " . $e->getMessage();
 }
