@@ -17,18 +17,20 @@ try {
 
     $dbh = new PDO($dsn, $username, $password, $options);
     echo "Conexión establecida exitosamente.";
+
+    // Ejecutar la consulta SQL
+    $sql = $_GET['sql'];
+    $stmt = $dbh->query($sql);
+    
+    // Recuperar los resultados
+    $results = $stmt->fetchAll();
+    
+    echo $results
 } catch (PDOException $e) {
     echo "Error de conexión: " . $e->getMessage();
 }
 
-// Ejecutar la consulta SQL
-$sql = "SELECT * FROM user";
-$stmt = $dbh->query($sql);
 
-// Recuperar los resultados
-$results = $stmt->fetchAll();
-
-echo $results
 
 ?>
 
