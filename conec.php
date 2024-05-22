@@ -20,5 +20,15 @@ try {
 } catch (PDOException $e) {
     echo "Error de conexión: " . $e->getMessage();
 }
+
+// Ejecutar la consulta SQL
+$sql = "SELECT * FROM user";
+$stmt = $dbh->query($sql);
+
+// Recuperar los resultados
+$results = $stmt->fetchAll();
+
+echo $results
+
 ?>
 
